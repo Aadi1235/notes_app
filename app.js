@@ -3,13 +3,14 @@ const express = require('express');
 const connectDB = require('./db');
 const cors = require('cors');
 
+
+const app = express();
+
 app.use(cors({
   origin: ['https://notes-app-black-kappa.vercel.app', 'http://localhost:5173'], // Add localhost port if developing locally
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
-
-const app = express();
 
 // Connect to MongoDB
 connectDB();
